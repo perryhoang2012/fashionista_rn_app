@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleProp, View, ViewStyle} from 'react-native';
-import {styles} from './Block.styles';
+import {Keyboard, StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
+import {styles} from './Button.styles';
 
-export interface BlockProps {
+export type ButtonProps = {
   /**
    * @default false
    */
-  flex?: boolean | number;
+  flex?: boolean;
   /**
    * @default false
    */
@@ -34,7 +34,7 @@ export interface BlockProps {
   /**
    * @default false
    */
-  top?: boolean | number | undefined;
+  top?: boolean;
   /**
    * @default false
    */
@@ -42,7 +42,7 @@ export interface BlockProps {
   /**
    * @default false
    */
-  space?: 'around' | 'between' | 'evenly';
+  space?: 'around' | 'between' | 'evenly' | false;
   /**
    * @default false
    */
@@ -52,61 +52,65 @@ export interface BlockProps {
    */
   style?: StyleProp<ViewStyle>;
   /**
-   * @default {}
+   * @default 0
    */
   pa?: number;
   /**
-   * @default {}
+   * @default 0
    */
   px?: number;
   /**
-   * @default {}
+   * @default 0
    */
   py?: number;
   /**
-   * @default {}
+   * @default 0
    */
   pl?: number;
   /**
-   * @default {}
+   * @default 0
    */
   pr?: number;
   /**
-   * @default {}
+   * @default 0
    */
   pt?: number;
   /**
-   * @default {}
+   * @default 0
    */
   pb?: number;
   /**
-   * @default {}
+   * @default 0
    */
   ma?: number;
   /**
-   * @default {}
+   * @default 0
    */
   mx?: number;
   /**
-   * @default {}
+   * @default 0
    */
   my?: number;
   /**
-   * @default {}
+   * @default 0
    */
   ml?: number;
   /**
-   * @default {}
+   * @default 0
    */
   mr?: number;
   /**
-   * @default {}
+   * @default 0
    */
   mt?: number;
   /**
-   * @default {}
+   * @default 0
    */
   mb?: number;
+  /**
+   * @default false
+   */
+  animated?: boolean;
   /**
    * @default false
    */
@@ -122,14 +126,42 @@ export interface BlockProps {
   /**
    * @default false
    */
+  isThirdSide?: boolean;
+  /**
+   * @default false
+   */
+  disabled?: boolean;
+  /**
+   * @default () => {}
+   */
+  onPress?: () => void;
+  /**
+   * @default 0
+   */
+  opacity?: number;
+  /**
+   * @default 0
+   */
+  props?: any;
+  /**
+   * @default 0
+   */
   children?: React.ReactNode;
+  /**
+   * @default {}
+   */
+  hitSlop?: {
+    left?: number;
+    right?: number;
+    top?: number;
+    bottom?: number;
+  };
   /**
    * @default {}
    */
   ba?: {
     width: number;
     color: string;
-    style?: string;
   };
   /**
    * @default {}
@@ -137,7 +169,6 @@ export interface BlockProps {
   bb?: {
     width: number;
     color: string;
-    style?: string;
   };
   /**
    * @default {}
@@ -145,7 +176,6 @@ export interface BlockProps {
   bt?: {
     width: number;
     color: string;
-    style?: string;
   };
   /**
    * @default {}
@@ -153,7 +183,6 @@ export interface BlockProps {
   br?: {
     width: number;
     color: string;
-    style?: string;
   };
   /**
    * @default {}
@@ -161,27 +190,38 @@ export interface BlockProps {
   bl?: {
     width: number;
     color: string;
-    style?: string;
   };
   /**
    * @default 0
    */
   radius?: number;
   /**
-   * @default undefined
+   * @default 0
    */
   width?: number | string;
   /**
-   * @default undefined
+   * @default 0
    */
   height?: number | string;
   /**
-   * @default undefined
+   * @default null
    */
   background?: string;
-}
+  /**
+   * @default false
+   */
+  loading?: boolean;
+  /**
+   * @default false
+   */
+  delayLongPress?: number;
+  /**
+   * @default false
+   */
+  onLongPress?: () => void;
+};
 
-const Block: React.FC<BlockProps> = props => {
+const Button: React.FC<ButtonProps> = props => {
   const {
     children,
     shadow,
@@ -210,6 +250,10 @@ const Block: React.FC<BlockProps> = props => {
     mr,
     mt,
     mb,
+    opacity,
+    disabled,
+    onPress,
+    hitSlop,
     ba,
     bb,
     bt,
@@ -219,9 +263,11 @@ const Block: React.FC<BlockProps> = props => {
     width,
     height,
     background,
+    loading,
+    onLongPress,
   } = props;
 
-  const blockStyles: any = [
+  const buttonStyles: any = [
     flex && {flex: 1},
     row && styles.row,
     center && styles.center,
@@ -247,27 +293,11 @@ const Block: React.FC<BlockProps> = props => {
     mr && {marginRight: mr},
     mt && {marginTop: mt},
     mb && {marginBottom: mb},
-    ba && {borderWidth: ba.width, borderColor: ba.color, borderStyle: ba.style},
-    bb && {
-      borderBottomWidth: bb.width,
-      borderBottomColor: bb.color,
-      borderBottomStyle: bb.style,
-    },
-    bt && {
-      borderTopWidth: bt.width,
-      borderTopColor: bt.color,
-      borderTopStyle: bt.style,
-    },
-    bl && {
-      borderLeftWidth: bl.width,
-      borderLeftColor: bl.color,
-      borderLeftStyle: bl.style,
-    },
-    br && {
-      borderRightWidth: br.width,
-      borderRightColor: br.color,
-      borderRightStyle: br.style,
-    },
+    ba && {borderWidth: ba.width, borderColor: ba.color},
+    bb && {borderBottomWidth: bb.width, borderBottomColor: bb.color},
+    bt && {borderTopWidth: bt.width, borderTopColor: bt.color},
+    bl && {borderLeftWidth: bl.width, borderLeftColor: bl.color},
+    br && {borderRightWidth: br.width, borderRightColor: br.color},
     radius && {borderRadius: radius},
     width && {width},
     height && {height},
@@ -276,10 +306,26 @@ const Block: React.FC<BlockProps> = props => {
   ];
 
   return (
-    <View {...props} style={blockStyles}>
+    <TouchableOpacity
+      {...props}
+      style={buttonStyles}
+      activeOpacity={opacity || 0.85}
+      onPress={() => {
+        if (!disabled || !loading) {
+          onPress && onPress();
+          Keyboard.dismiss();
+        }
+      }}
+      onLongPress={() => {
+        if (!disabled || !loading) {
+          onLongPress && onLongPress();
+          Keyboard.dismiss();
+        }
+      }}
+      hitSlop={hitSlop}>
       {children}
-    </View>
+    </TouchableOpacity>
   );
 };
 
-export default Block;
+export default Button;
