@@ -11,7 +11,8 @@
     "preinstall": "node ./scripts/pre-install",
     "postinstall": "node ./scripts/post-install",
     "clean:android": "cd android && ./gradlew clean && cd ../",
-    "build:apk": "cd android && ./gradlew app:assembleRelease && cd ../"
+    "build:apk": "cd android && ./gradlew app:assembleRelease && cd ../",
+    "open:ios": "xed -b ios"
   },
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.3.1",
