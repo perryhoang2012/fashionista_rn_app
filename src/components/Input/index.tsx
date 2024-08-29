@@ -4,7 +4,7 @@ import {styles} from './Input.style';
 import Block from '../Block';
 import Button from '../Button';
 import {SvgXml} from 'react-native-svg';
-import {icon_eye_slash} from '../../assets/icons';
+import {icon_eye_slash} from '@assets/icons';
 
 type Props = {
   title?: string;

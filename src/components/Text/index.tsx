@@ -1,8 +1,8 @@
+import {moderateScale} from '@helpers/uiHelper';
 import {useTheme} from '@react-navigation/native';
+import {fonts} from '@themes/fonts';
 import React from 'react';
 import {Platform, Text as TextBase} from 'react-native';
-import {moderateScale} from '../../helpers/uiHelper';
-import {fonts} from '../../themes/fonts';
 import {styles} from './Text.styles';
 
 export interface Props {
