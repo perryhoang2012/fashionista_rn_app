@@ -15,15 +15,6 @@ type Props = {
   containerStyle?: StyleProp<ViewStyle>;
 };
 
-/**
- * CustomImage component.
- *
- * @param {Props} props - The component props.
- * @param {Source} props.source - The image source.
- * @param {StyleProp<ImageStyle>} [props.style] - The image style.
- * @param {StyleProp<ViewStyle>} [props.containerStyle] - The container style.
- * @return {React.ReactElement} The rendered component.
- */
 const CustomImage: React.FC<Props> = ({
   source,
   style,
@@ -31,20 +22,10 @@ const CustomImage: React.FC<Props> = ({
 }: Props): React.ReactElement => {
   const [loading, setLoading] = React.useState<boolean>(true);
 
-  /**
-   * Handle load start event.
-   *
-   * @return {void} No return value.
-   */
   const handleLoadStart = React.useCallback((): void => {
     setLoading(true);
   }, []);
 
-  /**
-   * Handle load end event.
-   *
-   * @return {void} No return value.
-   */
   const handleLoadEnd = React.useCallback((): void => {
     setLoading(false);
   }, []);

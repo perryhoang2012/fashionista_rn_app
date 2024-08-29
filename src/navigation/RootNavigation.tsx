@@ -1,9 +1,9 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {RootStackParamList} from '../models/navigation';
-import StartScreen from '../screens/StartScreen';
 import {navigationRef} from './NavigationService';
+import {RootStackParamList} from '@models/navigation';
+import StartScreen from '@screens/StartScreen';
 
 const RootNavigation = () => {
   const RootStack = createNativeStackNavigator<RootStackParamList>();

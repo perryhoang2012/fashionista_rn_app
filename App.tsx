@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import RootNavigation from './src/navigation/RootNavigation';
+import './ReactotronConfig';
 
 function App(): JSX.Element {
   return (

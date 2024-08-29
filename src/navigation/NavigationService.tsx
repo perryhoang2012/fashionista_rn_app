@@ -1,9 +1,8 @@
-// NavigationService.ts
+import {RootStackParamList} from '@models/navigation';
 import {
   createNavigationContainerRef,
   StackActions,
 } from '@react-navigation/native';
-import {RootStackParamList} from '../models/navigation';
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
 
