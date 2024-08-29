@@ -15,6 +15,7 @@ module.exports = {
           '@screens': './src/screens',
           '@themes': './src/themes',
           '@fonts': './src/themes/fonts',
+          '@locales': './src/locales',
         },
       },
     ],

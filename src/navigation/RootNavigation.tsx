@@ -4,6 +4,7 @@ import React from 'react';
 import {navigationRef} from './NavigationService';
 import {RootStackParamList} from '@models/navigation';
 import StartScreen from '@screens/StartScreen';
+import LoginScreen from '@screens/LoginScreen';
 
 const RootNavigation = () => {
   const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -15,6 +16,7 @@ const RootNavigation = () => {
         screenOptions={{headerShown: false}}>
         {/* <RootStack.Screen name="BottomTab" component={BottomTabNavigator} /> */}
         <RootStack.Screen name="StartScreen" component={StartScreen} />
+        <RootStack.Screen name="LoginScreen" component={LoginScreen} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

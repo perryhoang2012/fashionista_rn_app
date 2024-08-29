@@ -1,4 +1,4 @@
-import {moderateScale} from '@helpers/uiHelper';
+import {moderateScale, scale, verticalScale} from '@helpers/uiHelper';
 import {useTheme} from '@react-navigation/native';
 import {fonts} from '@themes/fonts';
 import React from 'react';
@@ -104,9 +104,9 @@ const Text: React.FC<Props> = props => {
     mx && {marginHorizontal: mx},
     my && {marginVertical: my},
     ml && {marginLeft: ml},
-    mr && {marginRight: mr},
-    mt && {marginTop: mt},
-    mb && {marginBottom: mb},
+    mr && {marginRight: scale(mr)},
+    mt && {marginTop: verticalScale(mt)},
+    mb && {marginBottom: verticalScale(mb)},
     height && {lineHeight: height},
     weight && {
       fontWeight: weight === 'bold' && Platform.OS === 'ios' ? '500' : weight,
