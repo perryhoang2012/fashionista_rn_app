@@ -1,5 +1,5 @@
 import {moderateScale, scale, verticalScale} from '@helpers/uiHelper';
-import {useTheme} from '@react-navigation/native';
+import {colors} from '@themes/colors';
 import {fonts} from '@themes/fonts';
 import React from 'react';
 import {Platform, Text as TextBase} from 'react-native';
@@ -83,10 +83,8 @@ const Text: React.FC<Props> = props => {
     color,
   } = props;
 
-  const {colors} = useTheme();
-
   const textStyles: any = [
-    {color: color || colors.text},
+    {color: color || colors.BLACK},
     flex && {flex: 1},
     !size && {lineHeight: 20},
     title && styles.title,
