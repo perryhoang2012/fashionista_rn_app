@@ -222,7 +222,7 @@ const Block: React.FC<BlockProps> = props => {
   } = props;
 
   const blockStyles: any = [
-    flex && {flex: 1},
+    flex && {flex: typeof flex === 'boolean' ? 1 : flex},
     row && styles.row,
     center && styles.center,
     middle && styles.middle,
