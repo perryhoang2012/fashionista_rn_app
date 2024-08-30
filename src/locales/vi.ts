@@ -7,4 +7,6 @@ export default {
   EMAIL: 'Email',
   NEXT: 'Tiếp theo',
   CANCEL: 'Huỷ',
+  EMAIL_REQUIRED: 'Bắt buộc phải có email',
+  INVALID_EMAIL: 'Email không đúng định dạng',
 };

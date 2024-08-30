@@ -6,9 +6,9 @@ import React from 'react';
 import {styles} from './StartScreen.styles';
 import Button from '@components/Button';
 import CustomSvg from '@components/CustomSvg';
-import {icon_arrow_right} from '@assets/icons';
 import {navigate} from '@navigation/NavigationService';
 import {t} from '@locales';
+import {icon_arrow_right} from '@themes/iconSvg';
 
 const StartScreen = () => {
   const goToLogin = () => {
@@ -31,7 +31,8 @@ const StartScreen = () => {
           center
           background={colors.PRIMARY}
           height={50}
-          width={'100%'}>
+          width={'100%'}
+          onPress={goToLogin}>
           <Text size={22} color={colors.WHITE}>
             {t('GET_STARTED')}
           </Text>

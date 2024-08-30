@@ -7,4 +7,6 @@ export default {
   EMAIL: 'Email',
   NEXT: 'Next',
   CANCEL: 'Cancel',
+  EMAIL_REQUIRED: 'Email is required',
+  INVALID_EMAIL: 'Invalid email address',
 };

@@ -5,4 +5,5 @@ export const colors = {
   PINK: '#FF5790',
   WHITE: '#FFFFFF',
   WHITE_SECONDARY: '#F3F3F3',
+  RED: '#F5004F',
 };

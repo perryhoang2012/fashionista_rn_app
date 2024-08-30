@@ -4,12 +4,21 @@ import Input from '@components/Input';
 import Text from '@components/Text';
 import {t} from '@locales';
 import {colors} from '@themes/colors';
-import React, {useState} from 'react';
+import React from 'react';
+import {Controller, useForm} from 'react-hook-form';
 import {ImageBackground} from 'react-native';
 import {styles} from './LoginScreen.styles';
+import {emailRules} from '../../utils/validationRules';
+import {goBack} from '@navigation/NavigationService';
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState<string>('');
+  const {
+    control,
+    handleSubmit,
+    formState: {errors},
+  } = useForm();
+
+  const onSubmit = () => {};
 
   return (
     <Block flex>
@@ -29,10 +38,19 @@ const LoginScreen = () => {
           </Block>
 
           <Block mt={20}>
-            <Input
-              value={email}
-              onChangeValue={setEmail}
-              placeholder={t('EMAIL')}
+            <Controller
+              control={control}
+              name="email"
+              rules={emailRules}
+              render={({field: {onChange, onBlur, value}}) => (
+                <Input
+                  value={value}
+                  onChangeValue={onChange}
+                  onBlur={onBlur}
+                  placeholder={t('EMAIL')}
+                  error={errors.email?.message as string}
+                />
+              )}
             />
           </Block>
           <Block>
@@ -41,12 +59,13 @@ const LoginScreen = () => {
               center
               height={50}
               background={colors.PRIMARY}
-              radius={16}>
+              radius={16}
+              onPress={handleSubmit(onSubmit)}>
               <Text light size={22} color={colors.WHITE}>
                 {t('NEXT')}
               </Text>
             </Button>
-            <Button middle center mt={14}>
+            <Button middle center mt={14} onPress={() => goBack()}>
               <Text light size={15} color={colors.BLACK}>
                 {t('CANCEL')}
               </Text>
