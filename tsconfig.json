@@ -11,7 +11,8 @@
       "@screens/*": ["src/screens/*"],
       "@themes/*": ["src/themes/*"],
       "@fonts/*": ["src/themes/fonts*"],
-      "@locales": ["src/locales"]
+      "@locales": ["src/locales"],
+      "@utils": ["src/utils"]
     }
   }
 }

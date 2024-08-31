@@ -16,6 +16,7 @@ module.exports = {
           '@themes': './src/themes',
           '@fonts': './src/themes/fonts',
           '@locales': './src/locales',
+          '@utils': './src/utils',
         },
       },
     ],
