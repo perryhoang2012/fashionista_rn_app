@@ -3,6 +3,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import RootNavigation from './src/navigation/RootNavigation';
 import './ReactotronConfig';
 import {setLocale} from '@locales';
+import Loading from '@components/Loading';
 
 function App(): JSX.Element {
   setLocale('en');
@@ -10,6 +11,7 @@ function App(): JSX.Element {
   return (
     <SafeAreaProvider>
       <RootNavigation />
+      <Loading />
     </SafeAreaProvider>
   );
 }
