@@ -1,6 +1,7 @@
 import React from 'react';
 import {Keyboard, StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
 import {styles} from './Button.styles';
+import {scale, verticalScale} from '@helpers/uiHelper';
 
 export type ButtonProps = {
   /**
@@ -291,7 +292,7 @@ const Button: React.FC<ButtonProps> = props => {
     my && {marginVertical: my},
     ml && {marginLeft: ml},
     mr && {marginRight: mr},
-    mt && {marginTop: mt},
+    mt && {marginTop: verticalScale(mt)},
     mb && {marginBottom: mb},
     ba && {borderWidth: ba.width, borderColor: ba.color},
     bb && {borderBottomWidth: bb.width, borderBottomColor: bb.color},
@@ -299,8 +300,10 @@ const Button: React.FC<ButtonProps> = props => {
     bl && {borderLeftWidth: bl.width, borderLeftColor: bl.color},
     br && {borderRightWidth: br.width, borderRightColor: br.color},
     radius && {borderRadius: radius},
-    width && {width},
-    height && {height},
+    width && {width: typeof width === 'number' ? scale(width) : width},
+    height && {
+      height: typeof height === 'number' ? verticalScale(height) : height,
+    },
     background && {backgroundColor: background},
     style,
   ];

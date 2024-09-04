@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 import {styles} from './Block.styles';
+import {colors} from '@themes/colors';
+import {verticalScale} from '@helpers/uiHelper';
 
 export interface BlockProps {
   /**
@@ -222,7 +224,7 @@ const Block: React.FC<BlockProps> = props => {
   } = props;
 
   const blockStyles: any = [
-    flex && {flex: 1},
+    flex && {flex: typeof flex === 'boolean' ? 1 : flex},
     row && styles.row,
     center && styles.center,
     middle && styles.middle,
@@ -239,7 +241,7 @@ const Block: React.FC<BlockProps> = props => {
     pl && {paddingLeft: pl},
     pr && {paddingRight: pr},
     pt && {paddingTop: pt},
-    pb && {paddingBottom: pb},
+    pb && {paddingBottom: verticalScale(pb)},
     ma && {margin: ma},
     mx && {marginHorizontal: mx},
     my && {marginVertical: my},

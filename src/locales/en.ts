@@ -1,0 +1,15 @@
+export default {
+  GET_STARTED: " Let's get started",
+  HAVE_AN_ACCOUNT: 'I already have an account',
+  CREATE_ACCOUNT: 'Create Account',
+  LOGIN: 'Login',
+  SER_YOU_BACK: 'Good to see you back!',
+  EMAIL: 'Email',
+  NEXT: 'Next',
+  CANCEL: 'Cancel',
+  EMAIL_REQUIRED: 'Email is required',
+  INVALID_EMAIL: 'Invalid email address',
+  PASSWORD: 'Password',
+  INVALID_PASSWORD: 'The password must be at least 8 characters long.',
+  PASSWORD_REQUIRED: 'The password is required',
+};
