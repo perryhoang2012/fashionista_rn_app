@@ -14,6 +14,10 @@ const StartScreen = () => {
   const goToLogin = () => {
     navigate('LoginScreen');
   };
+
+  const goToCreateAccount = () => {
+    navigate('CreateAccountScreen');
+  };
   return (
     <Block flex center background={colors.WHITE}>
       <Block flex />
@@ -32,7 +36,7 @@ const StartScreen = () => {
           background={colors.PRIMARY}
           height={50}
           width={'100%'}
-          onPress={goToLogin}>
+          onPress={goToCreateAccount}>
           <Text size={22} color={colors.WHITE}>
             {t('GET_STARTED')}
           </Text>
