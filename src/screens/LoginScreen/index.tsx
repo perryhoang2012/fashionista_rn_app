@@ -8,17 +8,23 @@ import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import {ImageBackground} from 'react-native';
 import {styles} from './LoginScreen.styles';
-import {emailRules} from '../../utils/validationRules';
 import {goBack} from '@navigation/NavigationService';
+import {emailRules} from '@utils/validationRules';
+import useGeneralStore from '@store/generalStore';
 
 const LoginScreen = () => {
+  const {showLoading} = useGeneralStore();
   const {
     control,
     handleSubmit,
-    formState: {errors},
-  } = useForm();
+    formState: {errors, isSubmitted},
+  } = useForm({
+    mode: 'onSubmit',
+  });
 
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    showLoading();
+  };
 
   return (
     <Block flex>
@@ -49,6 +55,7 @@ const LoginScreen = () => {
                   onBlur={onBlur}
                   placeholder={t('EMAIL')}
                   error={errors.email?.message as string}
+                  isSubmitted={isSubmitted}
                 />
               )}
             />

@@ -26,6 +26,8 @@ type Props = {
   onBlur?:
     | ((e: NativeSyntheticEvent<TextInputFocusEventData>) => void)
     | undefined;
+
+  isSubmitted?: boolean;
 };
 
 const Input = (props: Props) => {
@@ -38,6 +40,7 @@ const Input = (props: Props) => {
     placeholder,
     error,
     onBlur,
+    isSubmitted,
   } = props;
 
   const [isSecureText, setIsSecureText] = useState<boolean>(false);
@@ -64,7 +67,7 @@ const Input = (props: Props) => {
         )}
       </Block>
       <Block height={20} mt={4}>
-        {error && (
+        {error && isSubmitted && (
           <Text size={14} color={colors.RED}>
             {error}
           </Text>
