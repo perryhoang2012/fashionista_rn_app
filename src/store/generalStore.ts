@@ -1,6 +1,12 @@
-import create from 'zustand';
+import {create} from 'zustand';
 
-const useGeneralStore = create(set => ({
+interface GeneralState {
+  isLoading: boolean;
+  showLoading: () => void;
+  hideLoading: () => void;
+}
+
+const useGeneralStore = create<GeneralState>(set => ({
   isLoading: false,
   showLoading: () => set({isLoading: true}),
   hideLoading: () => set({isLoading: false}),

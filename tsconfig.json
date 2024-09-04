@@ -6,13 +6,14 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@helpers/*": ["src/helpers/*"],
+      "@locales": ["src/locales"],
       "@models/*": ["src/models/*"],
       "@navigation/*": ["src/navigation/*"],
       "@screens/*": ["src/screens/*"],
+      "@store/*": ["src/store/*"],
       "@themes/*": ["src/themes/*"],
-      "@fonts/*": ["src/themes/fonts*"],
-      "@locales": ["src/locales"],
-      "@utils": ["src/utils"]
+      "@utils/*": ["src/utils/*"],
+      "@fonts/*": ["src/themes/fonts*"]
     }
   }
 }

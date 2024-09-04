@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ActivityIndicator, Modal, View} from 'react-native';
-import useGeneralStore from 'src/store/generalStore';
 import {styles} from './Loading.style';
+import useGeneralStore from '@store/generalStore';
+import {colors} from '@themes/colors';
 
 const Loading = () => {
-  const isLoading = useGeneralStore(state => state.isLoading);
+  const {isLoading, hideLoading} = useGeneralStore();
+
+  useEffect(() => {
+    if (isLoading) {
+      setTimeout(() => {
+        hideLoading();
+      }, 10000);
+    }
+  }, [hideLoading, isLoading]);
 
   return (
     <Modal
@@ -14,7 +23,7 @@ const Loading = () => {
       onRequestClose={() => {}}>
       <View style={styles.modalBackground}>
         <View style={styles.activityIndicatorWrapper}>
-          <ActivityIndicator size="large" color="#0000ff" />
+          <ActivityIndicator size="large" color={colors.PRIMARY} />
         </View>
       </View>
     </Modal>

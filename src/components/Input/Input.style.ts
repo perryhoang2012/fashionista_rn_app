@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   buttonEye: {
     position: 'absolute',
     right: moderateScale({size: 10}),
-    top: scale(32),
+    top: scale(14),
     zIndex: 1,
   },
 });

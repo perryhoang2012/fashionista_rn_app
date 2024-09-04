@@ -9,4 +9,7 @@ export default {
   CANCEL: 'Huỷ',
   EMAIL_REQUIRED: 'Bắt buộc phải có email',
   INVALID_EMAIL: 'Email không đúng định dạng',
+  PASSWORD: 'Mật khẩu',
+  INVALID_PASSWORD: 'Mật khẩu phải chứa 8 kí tự',
+  PASSWORD_REQUIRED: 'Mật khẩu không thể để trống',
 };

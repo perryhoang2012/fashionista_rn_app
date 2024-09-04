@@ -7,3 +7,11 @@ export const emailRules = {
     message: t('INVALID_EMAIL'),
   },
 };
+
+export const passwordRules = {
+  required: t('PASSWORD_REQUIRED'),
+  pattern: {
+    value: /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$/,
+    message: t('INVALID_PASSWORD'),
+  },
+};
