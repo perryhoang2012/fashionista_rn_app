@@ -11,6 +11,7 @@ import {styles} from './LoginScreen.styles';
 import {goBack} from '@navigation/NavigationService';
 import {emailRules} from '@utils/validationRules';
 import useGeneralStore from '@store/generalStore';
+import KeyboardSpacer from '@components/KeyboardSpacer';
 
 const LoginScreen = () => {
   const {showLoading} = useGeneralStore();
@@ -59,6 +60,7 @@ const LoginScreen = () => {
                 />
               )}
             />
+            <KeyboardSpacer />
           </Block>
           <Block>
             <Button
