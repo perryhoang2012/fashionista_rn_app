@@ -35,10 +35,10 @@ const CountDownTimer = (props: Props) => {
     return () => clearInterval(intervalId);
   }, [secondsState]);
 
-  const formatTime = (sec: number, type: string) => {
-    const hours = Math.floor(sec / 3600);
-    const minutes = Math.floor((sec % 3600) / 60);
-    const seconds = sec % 60;
+  const formatTime = (type: string) => {
+    const hours = Math.floor(secondsState / 3600);
+    const minutes = Math.floor((secondsState % 3600) / 60);
+    const seconds = secondsState % 60;
 
     if (type === 'hours') {
       return hours < 10 ? `0${hours}` : hours;
@@ -64,7 +64,7 @@ const CountDownTimer = (props: Props) => {
           radius={7}
           background={color || colors.WHITE_SECONDARY}>
           <Text size={16} semiBold>
-            {formatTime(secondsState, 'hours')}
+            {formatTime('hours')}
           </Text>
         </Block>
         <Block
@@ -76,7 +76,7 @@ const CountDownTimer = (props: Props) => {
           radius={7}
           background={color || colors.WHITE_SECONDARY}>
           <Text size={16} semiBold>
-            {formatTime(secondsState, 'minutes')}
+            {formatTime('minutes')}
           </Text>
         </Block>
         <Block
@@ -87,7 +87,7 @@ const CountDownTimer = (props: Props) => {
           radius={7}
           background={color || colors.WHITE_SECONDARY}>
           <Text size={16} semiBold>
-            {formatTime(secondsState, 'seconds')}
+            {formatTime('seconds')}
           </Text>
         </Block>
       </Block>
