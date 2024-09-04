@@ -1,3 +1,4 @@
+import CustomSvg from '@components/CustomSvg';
 import {verticalScale} from '@helpers/uiHelper';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import CartScreen from '@screens/CartScreen';
@@ -18,10 +19,9 @@ import {
   icon_profile_active,
 } from '@themes/iconSvg';
 import React from 'react';
-import {SvgXml} from 'react-native-svg';
 
 const HomeIcon = ({focused}: {focused: boolean}) => (
-  <SvgXml
+  <CustomSvg
     xml={focused ? icon_home_active : icon_home}
     width={focused ? 26 : 24}
     height={focused ? 26 : 24}
@@ -29,7 +29,7 @@ const HomeIcon = ({focused}: {focused: boolean}) => (
 );
 
 const WishlistIcon = ({focused}: {focused: boolean}) => (
-  <SvgXml
+  <CustomSvg
     xml={focused ? icon_heart_active : icon_heart}
     width={focused ? 26 : 24}
     height={focused ? 26 : 24}
@@ -37,7 +37,7 @@ const WishlistIcon = ({focused}: {focused: boolean}) => (
 );
 
 const CategoriesIcon = ({focused}: {focused: boolean}) => (
-  <SvgXml
+  <CustomSvg
     xml={focused ? icon_categories_active : icon_categories}
     width={focused ? 26 : 24}
     height={focused ? 26 : 24}
@@ -45,7 +45,7 @@ const CategoriesIcon = ({focused}: {focused: boolean}) => (
 );
 
 const CartIcon = ({focused}: {focused: boolean}) => (
-  <SvgXml
+  <CustomSvg
     xml={focused ? icon_cart_active : icon_cart}
     width={focused ? 26 : 24}
     height={focused ? 26 : 24}
@@ -53,7 +53,7 @@ const CartIcon = ({focused}: {focused: boolean}) => (
 );
 
 const ProfileIcon = ({focused}: {focused: boolean}) => (
-  <SvgXml
+  <CustomSvg
     xml={focused ? icon_profile_active : icon_profile}
     width={focused ? 26 : 24}
     height={focused ? 26 : 24}
