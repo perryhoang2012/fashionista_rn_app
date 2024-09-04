@@ -1,3 +1,4 @@
+import CustomSvg from '@components/CustomSvg';
 import Text from '@components/Text';
 import {colors} from '@themes/colors';
 import {icon_eye_slash} from '@themes/iconSvg';
@@ -9,7 +10,6 @@ import {
   TextInputFocusEventData,
   ViewStyle,
 } from 'react-native';
-import {SvgXml} from 'react-native-svg';
 import Block from '../Block';
 import Button from '../Button';
 import {styles} from './Input.style';
@@ -62,7 +62,7 @@ const Input = (props: Props) => {
           <Button
             style={styles.buttonEye}
             onPress={() => setIsSecureText(pre => !pre)}>
-            <SvgXml xml={icon_eye_slash} />
+            <CustomSvg xml={icon_eye_slash} />
           </Button>
         )}
       </Block>

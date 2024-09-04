@@ -2,8 +2,8 @@ import React from 'react';
 import {SvgXml} from 'react-native-svg';
 
 type Props = {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   xml: string;
 };
 
