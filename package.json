@@ -15,6 +15,7 @@
     "open:ios": "xed -b ios"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^11.3.2",
     "@react-native-masked-view/masked-view": "^0.3.1",
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
@@ -32,6 +33,7 @@
     "react-native-skeleton-placeholder": "^5.2.4",
     "react-native-svg": "^15.6.0",
     "reactotron-react-native": "^5.1.8",
+    "reactotron-react-query": "^1.0.4",
     "zustand": "^4.5.5"
   },
   "devDependencies": {

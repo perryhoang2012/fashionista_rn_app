@@ -1691,6 +1691,11 @@
     prompts "^2.4.0"
     semver "^7.5.2"
 
+"@react-native-community/netinfo@^11.3.2":
+  version "11.3.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-11.3.2.tgz#e63201d0b87ad42d086d1003be48ae7b327f0594"
+  integrity sha512-YsaS3Dutnzqd1BEoeC+DEcuNJedYRkN6Ef3kftT5Sm8ExnCF94C/nl4laNxuvFli3+Jz8Df3jO25Jn8A9S0h4w==
+
 "@react-native-masked-view/masked-view@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@react-native-masked-view/masked-view/-/masked-view-0.3.1.tgz#5bd76f17004a6ccbcec03856893777ee91f23d29"
@@ -6266,6 +6271,11 @@ reactotron-react-native@^5.1.8:
     reactotron-core-client "2.9.4"
   optionalDependencies:
     react-native-flipper "^0.164.0"
+
+reactotron-react-query@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/reactotron-react-query/-/reactotron-react-query-1.0.4.tgz#b4c6a40e24a790fb5cd7ec201601a3285c93c447"
+  integrity sha512-iFjkK7IaRUHuug8x6LI2UspOBglzLd2DKbX4k4hxImk3UnDnkLhSjNshEJSlUuI8SQXMnBE2wIwH8jNc88fi1Q==
 
 readable-stream@^3.4.0:
   version "3.6.2"

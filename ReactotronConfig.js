@@ -1,4 +1,10 @@
 import Reactotron, {networking, openInEditor} from 'reactotron-react-native';
+import {QueryClientManager, reactotronReactQuery} from 'reactotron-react-query';
+import {queryClient} from '@utils/queryClient';
+
+const queryClientManager = new QueryClientManager({
+  queryClient,
+});
 
 if (__DEV__) {
   Reactotron.configure({name: 'Fashionista'})
@@ -18,5 +24,11 @@ if (__DEV__) {
       }),
     )
     .use(openInEditor())
+    .use(reactotronReactQuery(queryClientManager))
+    .configure({
+      onDisconnect: () => {
+        queryClientManager.unsubscribe();
+      },
+    })
     .connect();
 }
