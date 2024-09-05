@@ -32,6 +32,7 @@
     "react-native-skeleton-placeholder": "^5.2.4",
     "react-native-svg": "^15.6.0",
     "reactotron-react-native": "^5.1.8",
+    "reactotron-react-query": "^1.0.4",
     "zustand": "^4.5.5"
   },
   "devDependencies": {
