@@ -6,11 +6,14 @@ import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import './ReactotronConfig';
 import RootNavigation from './src/navigation/RootNavigation';
+import useOnlineManager from '@hooks/useOnlineManager';
 
 // Create a client
 
 function App(): JSX.Element {
   setLocale('en');
+
+  useOnlineManager();
 
   return (
     <QueryClientProvider client={queryClient}>

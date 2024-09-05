@@ -17,7 +17,6 @@ const HomeScreen = () => {
     queryFn: () => getCategories(1, 6),
   });
 
-  console.log(status, error);
   return (
     <Block flex middle center background={colors.WHITE}>
       <Text>HomeScreen</Text>
