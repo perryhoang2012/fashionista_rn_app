@@ -7,6 +7,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import './ReactotronConfig';
 import RootNavigation from './src/navigation/RootNavigation';
 import useOnlineManager from '@hooks/useOnlineManager';
+import ToastSettings from '@utils/ToastSetting';
 
 // Create a client
 
@@ -20,6 +21,7 @@ function App(): JSX.Element {
       <SafeAreaProvider>
         <RootNavigation />
         <Loading />
+        <ToastSettings />
       </SafeAreaProvider>
     </QueryClientProvider>
   );

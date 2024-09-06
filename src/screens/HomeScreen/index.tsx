@@ -6,16 +6,16 @@ import React from 'react';
 import {Text} from 'react-native';
 
 const HomeScreen = () => {
-  const {
-    data: dataCategory,
-    isLoading: loadingCategory,
-    isError,
-    status,
-    error,
-  } = useQuery({
-    queryKey: ['categories'],
-    queryFn: () => getCategories(1, 6),
-  });
+  // const {
+  //   data: dataCategory,
+  //   isLoading: loadingCategory,
+  //   isError,
+  //   status,
+  //   error,
+  // } = useQuery({
+  //   queryKey: ['categories'],
+  //   queryFn: () => getCategories(1, 6),
+  // });
 
   return (
     <Block flex middle center background={colors.WHITE}>

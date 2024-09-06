@@ -6,4 +6,6 @@ export const colors = {
   WHITE: '#FFFFFF',
   WHITE_SECONDARY: '#F3F3F3',
   RED: '#F5004F',
+  BACKGROUND_ERROR: '#ff3547',
+  BACKGROUND_INFO: '#ffa000',
 };
