@@ -23,6 +23,6 @@ export const toast = (
   });
 };
 
-export const errorToast = (title: string) => {
-  toast(title, 'danger', 5000);
+export const errorToast = (title: string, duration?: number) => {
+  toast(title, 'danger', duration || 5000);
 };

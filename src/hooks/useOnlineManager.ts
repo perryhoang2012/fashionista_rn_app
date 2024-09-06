@@ -1,3 +1,4 @@
+import {errorToast} from '@helpers/toast';
 import NetInfo from '@react-native-community/netinfo';
 import {onlineManager} from '@tanstack/react-query';
 import {useEffect} from 'react';
@@ -12,6 +13,9 @@ const useOnlineManager = () => {
             state.isConnected &&
             Boolean(state.isInternetReachable),
         );
+        if (state.isConnected === false) {
+          errorToast('No internet connection', 100000);
+        }
       });
     }
   }, []);
