@@ -7,19 +7,22 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import './ReactotronConfig';
 import RootNavigation from './src/navigation/RootNavigation';
 import useOnlineManager from '@hooks/useOnlineManager';
+import ToastSettings from '@utils/ToastSetting';
+import useFirstTime from '@hooks/useFirstTime';
 
 // Create a client
 
 function App(): JSX.Element {
   setLocale('en');
-
   useOnlineManager();
+  useFirstTime();
 
   return (
     <QueryClientProvider client={queryClient}>
       <SafeAreaProvider>
         <RootNavigation />
         <Loading />
+        <ToastSettings />
       </SafeAreaProvider>
     </QueryClientProvider>
   );

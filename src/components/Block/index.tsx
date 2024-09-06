@@ -1,8 +1,7 @@
+import {verticalScale} from '@helpers/uiHelper';
 import React from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 import {styles} from './Block.styles';
-import {colors} from '@themes/colors';
-import {verticalScale} from '@helpers/uiHelper';
 
 export interface BlockProps {
   /**
