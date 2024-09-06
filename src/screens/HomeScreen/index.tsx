@@ -1,6 +1,4 @@
-import {getCategories} from '@apis/categories.api';
 import Block from '@components/Block';
-import {useQuery} from '@tanstack/react-query';
 import {colors} from '@themes/colors';
 import React from 'react';
 import {Text} from 'react-native';
