@@ -12,4 +12,6 @@ export default {
   PASSWORD: 'Mật khẩu',
   INVALID_PASSWORD: 'Mật khẩu phải chứa 8 kí tự',
   PASSWORD_REQUIRED: 'Mật khẩu không thể để trống',
+  SEARCH: 'Tìm kiếm',
+  SHOP: 'Shop',
 };
