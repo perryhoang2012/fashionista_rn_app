@@ -1,6 +1,6 @@
 import Block from '@components/Block';
 import Button from '@components/Button';
-import Input from '@components/Input';
+import InputOnForm from '@components/InputOnForm';
 import Text from '@components/Text';
 import {t} from '@locales';
 import {goBack, replace} from '@navigation/NavigationService';
@@ -42,7 +42,7 @@ const CreateAccountScreen = () => {
             name="email"
             rules={emailRules}
             render={({field: {onChange, onBlur, value}}) => (
-              <Input
+              <InputOnForm
                 value={value}
                 onChangeValue={onChange}
                 onBlur={onBlur}
@@ -58,7 +58,7 @@ const CreateAccountScreen = () => {
             name="password"
             rules={passwordRules}
             render={({field: {onChange, onBlur, value}}) => (
-              <Input
+              <InputOnForm
                 value={value}
                 onChangeValue={onChange}
                 onBlur={onBlur}

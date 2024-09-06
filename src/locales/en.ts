@@ -12,4 +12,6 @@ export default {
   PASSWORD: 'Password',
   INVALID_PASSWORD: 'The password must be at least 8 characters long.',
   PASSWORD_REQUIRED: 'The password is required',
+  SEARCH: 'Search',
+  SHOP: 'Shop',
 };

@@ -8,4 +8,5 @@ export const colors = {
   RED: '#F5004F',
   BACKGROUND_ERROR: '#ff3547',
   BACKGROUND_INFO: '#ffa000',
+  BACKGROUND_INPUT: '#F8F8F8',
 };
