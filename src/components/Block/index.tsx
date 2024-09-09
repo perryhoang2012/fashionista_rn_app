@@ -1,4 +1,4 @@
-import {verticalScale} from '@helpers/uiHelper';
+import {scale, verticalScale} from '@helpers/uiHelper';
 import React from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 import {styles} from './Block.styles';
@@ -235,7 +235,7 @@ const Block: React.FC<BlockProps> = props => {
     space && {justifyContent: `space-${space}`},
     wrap && {flexWrap: 'wrap'},
     pa && {padding: pa},
-    px && {paddingHorizontal: px},
+    px && {paddingHorizontal: scale(px)},
     py && {paddingVertical: py},
     pl && {paddingLeft: pl},
     pr && {paddingRight: pr},

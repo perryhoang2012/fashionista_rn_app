@@ -1,44 +1,28 @@
 import React from 'react';
-import {
-  ActivityIndicator,
-  ImageStyle,
-  StyleProp,
-  View,
-  ViewStyle,
-} from 'react-native';
-import FastImage, {Source} from 'react-native-fast-image';
+import {ImageStyle, StyleProp, View, ViewStyle} from 'react-native';
+import FastImage, {ResizeMode, Source} from 'react-native-fast-image';
 import {styles} from './CustomImage.style';
 
 type Props = {
   source: Source;
   style?: StyleProp<ImageStyle>;
   containerStyle?: StyleProp<ViewStyle>;
+  resizeMode?: ResizeMode;
 };
 
 const CustomImage: React.FC<Props> = ({
   source,
   style,
   containerStyle,
+  resizeMode = 'cover',
 }: Props): React.ReactElement => {
-  const [loading, setLoading] = React.useState<boolean>(true);
-
-  const handleLoadStart = React.useCallback((): void => {
-    setLoading(true);
-  }, []);
-
-  const handleLoadEnd = React.useCallback((): void => {
-    setLoading(false);
-  }, []);
-
+  const customImageStyles = [style, styles.container];
   return (
     <View style={[styles.container, containerStyle]}>
-      {loading && <ActivityIndicator size="large" color="#0000ff" />}
       <FastImage
-        style={[styles.image, style]}
+        style={customImageStyles}
         source={source}
-        onLoadEnd={handleLoadEnd}
-        onLoadStart={handleLoadStart}
-        resizeMode={FastImage.resizeMode.cover}
+        resizeMode={FastImage.resizeMode[resizeMode]}
       />
     </View>
   );
