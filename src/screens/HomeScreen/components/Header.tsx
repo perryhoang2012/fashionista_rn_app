@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     paddingTop: getStatusBarHeight + verticalScale(10),
     width: '100%',
     backgroundColor: colors.WHITE,
-    paddingHorizontal: scale(20),
     paddingBottom: verticalScale(10),
   },
   containerSearch: {
