@@ -29,7 +29,7 @@ const Header = () => {
     );
   };
   return (
-    <Block space="between" row style={styles.container}>
+    <Block space="between" row style={styles.container} px={20}>
       <Text bold size={28} weight={'700'}>
         {t('SHOP')}
       </Text>

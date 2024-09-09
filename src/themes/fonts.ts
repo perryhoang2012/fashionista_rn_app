@@ -1,6 +1,6 @@
 export const fonts = {
   BLACK: 'Raleway-Black',
-  BOLD: 'Releway-Bold',
+  BOLD: 'Raleway-Bold',
   EXTRA_BOLD: 'Raleway-ExtraBold',
   EXTRA_LIGHT: 'Raleway-ExtraLight',
   LIGHT: 'Raleway-Light',

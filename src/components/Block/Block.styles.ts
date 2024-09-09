@@ -26,14 +26,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   shadow: {
-    shadowColor: 'rgba(5, 5, 5, .2)',
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 3.41,
-    elevation: 3,
-    backgroundColor: 'white',
+    shadowColor: 'rgba(0, 0, 0, 0.2)', // iOS
+    shadowOffset: {width: 0, height: 2}, // iOS
+    shadowOpacity: 0.8, // iOS
+    shadowRadius: 3, // iOS
+    elevation: 5,
   },
 });

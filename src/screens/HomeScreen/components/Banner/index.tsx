@@ -5,22 +5,27 @@ import {scale, verticalScale} from '@helpers/uiHelper';
 import {Banners} from '@models/banner';
 import {useQuery} from '@tanstack/react-query';
 import {colors} from '@themes/colors';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Dimensions, StyleSheet} from 'react-native';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import LoadingBanner from './components/LoadingBanner';
+import {errorToast} from '@helpers/toast';
 const {width: D_WIDTH} = Dimensions.get('window');
 
 const widthBanner = D_WIDTH - scale(40);
 
 const Banner = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const {data, isLoading} = useQuery({
+  const [activeSlide, setActiveSlide] = useState<number>(0);
+  const {data, isLoading, isError} = useQuery({
     queryKey: ['bannerHome'],
     queryFn: () => getBannerHome(),
   });
 
-  console.log(isLoading);
+  useEffect(() => {
+    if (isError) {
+      errorToast('Error get banner home');
+    }
+  }, [isError]);
 
   const _renderItem = ({item, index}: {item: Banners; index: number}) => {
     return (
@@ -35,52 +40,59 @@ const Banner = () => {
     );
   };
 
+  const _renderDots = (activeIndex: number) => {
+    return (
+      <Block space="between" width={150} row height={10}>
+        {(data?.data || []).map((item, i) => (
+          <Block key={i}>
+            <Block>
+              {activeIndex === i ? (
+                <Block
+                  style={[
+                    styles.dotBanner,
+                    // eslint-disable-next-line react-native/no-inline-styles
+                    {
+                      width: 40,
+                      backgroundColor: colors.PRIMARY,
+                    },
+                  ]}
+                />
+              ) : (
+                <Block style={styles.dotBanner} />
+              )}
+            </Block>
+          </Block>
+        ))}
+      </Block>
+    );
+  };
+
   return isLoading ? (
     <LoadingBanner />
   ) : (
     <Block radius={9}>
-      <Carousel
-        data={data?.data || []}
-        renderItem={_renderItem}
-        sliderWidth={widthBanner}
-        itemWidth={widthBanner}
-        onSnapToItem={index => setActiveSlide(index)}
-        autoplay={true}
-        loop={true}
-        autoplayInterval={2000}
-      />
-      <Pagination
-        containerStyle={styles.containerPagination}
-        activeDotIndex={activeSlide}
-        dotsLength={5}
-        renderDots={activeIndex => {
-          console.log(activeIndex);
-          return (
-            <Block space="between" width={150} row height={10}>
-              {(data?.data || []).map((item, i) => (
-                <Block key={i}>
-                  <Block>
-                    {activeIndex === i ? (
-                      <Block
-                        style={[
-                          styles.dotBanner,
-                          // eslint-disable-next-line react-native/no-inline-styles
-                          {
-                            width: 40,
-                            backgroundColor: colors.PRIMARY,
-                          },
-                        ]}
-                      />
-                    ) : (
-                      <Block style={styles.dotBanner} />
-                    )}
-                  </Block>
-                </Block>
-              ))}
-            </Block>
-          );
-        }}
-      />
+      {data || !isError ? (
+        <>
+          <Carousel
+            data={data?.data || []}
+            renderItem={_renderItem}
+            sliderWidth={widthBanner}
+            itemWidth={widthBanner}
+            onSnapToItem={index => setActiveSlide(index)}
+            autoplay={true}
+            loop={true}
+            autoplayInterval={2000}
+          />
+          <Pagination
+            containerStyle={styles.containerPagination}
+            activeDotIndex={activeSlide}
+            dotsLength={5}
+            renderDots={activeIndex => _renderDots(activeIndex)}
+          />
+        </>
+      ) : (
+        <></>
+      )}
     </Block>
   );
 };

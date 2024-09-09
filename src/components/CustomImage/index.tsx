@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ImageStyle, StyleProp, View, ViewStyle} from 'react-native';
 import FastImage, {ResizeMode, Source} from 'react-native-fast-image';
 import {styles} from './CustomImage.style';
@@ -17,12 +17,19 @@ const CustomImage: React.FC<Props> = ({
   resizeMode = 'cover',
 }: Props): React.ReactElement => {
   const customImageStyles = [style, styles.container];
+
+  const [isError, setIsError] = useState(false);
+
+  const handleError = () => {
+    setIsError(true);
+  };
   return (
     <View style={[styles.container, containerStyle]}>
       <FastImage
         style={customImageStyles}
-        source={source}
+        source={isError ? require('@assets/images/logo.png') : source}
         resizeMode={FastImage.resizeMode[resizeMode]}
+        onError={handleError}
       />
     </View>
   );

@@ -302,7 +302,7 @@ const Button: React.FC<ButtonProps> = props => {
     radius && {borderRadius: radius},
     width && {width: typeof width === 'number' ? scale(width) : width},
     height && {
-      height: typeof height === 'number' ? verticalScale(height) : height,
+      height: typeof height === 'number' ? scale(height) : height,
     },
     background && {backgroundColor: background},
     style,

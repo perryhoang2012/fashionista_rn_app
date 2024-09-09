@@ -14,4 +14,6 @@ export default {
   PASSWORD_REQUIRED: 'The password is required',
   SEARCH: 'Search',
   SHOP: 'Shop',
+  CATEGORIES: 'Categories',
+  SEE_ALL: 'See all',
 };

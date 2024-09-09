@@ -155,3 +155,8 @@ export const icon_camera = `<svg width="22" height="18" viewBox="0 0 22 18" fill
 <path d="M14.7894 9.79829C14.7894 12.0136 12.9936 13.8095 10.7783 13.8095C8.56295 13.8095 6.76709 12.0136 6.76709 9.79829C6.76709 7.58297 8.56295 5.78711 10.7783 5.78711C12.9936 5.78711 14.7894 7.58297 14.7894 9.79829Z" stroke="#0042E0" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
+
+// export const icon_arrow_right = `<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M8.67173 0.294922L7.49207 1.49866L11.2477 5.14597H0.0891113V6.83119H11.2477L7.49207 10.4785L8.67173 11.6822L14.5459 5.98858L8.67173 0.294922Z" fill="white"/>
+// </svg>
+// `;
