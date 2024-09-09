@@ -14,4 +14,6 @@ export default {
   PASSWORD_REQUIRED: 'Mật khẩu không thể để trống',
   SEARCH: 'Tìm kiếm',
   SHOP: 'Shop',
+  CATEGORIES: 'Danh mục',
+  SEE_ALL: 'Xem tất cả',
 };

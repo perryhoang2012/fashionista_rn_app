@@ -1,9 +1,11 @@
 import Block from '@components/Block';
 import {colors} from '@themes/colors';
 import React from 'react';
-import {Text} from 'react-native';
+import {ScrollView, Text} from 'react-native';
 import Header from './components/Header';
 import Banner from './components/Banner';
+import Categories from './components/Categories';
+import {styles} from './HomeScreen.styles';
 
 const HomeScreen = () => {
   // const {
@@ -18,13 +20,15 @@ const HomeScreen = () => {
   // });
 
   return (
-    <Block flex background={colors.WHITE} px={20}>
+    <Block flex background={colors.WHITE}>
       <Header />
-      <Banner />
-      <Block flex>
-        <Text>HomeScreen</Text>
-      </Block>
-      {/* <CountDownTimer timeEnd={'2024-09-06 23:59:59'} /> */}
+      <ScrollView style={styles.containerScrollView}>
+        <Banner />
+        <Categories />
+        <Block flex>
+          <Text>HomeScreen</Text>
+        </Block>
+      </ScrollView>
     </Block>
   );
 };
