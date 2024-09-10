@@ -16,4 +16,6 @@ export default {
   SHOP: 'Shop',
   CATEGORIES: 'Danh mục',
   SEE_ALL: 'Xem tất cả',
+  NOT_YOU: 'Không phải là bạn?',
+  TYPE_YOU_PASSWORD: 'Nhập mật khẩu của bạn',
 };

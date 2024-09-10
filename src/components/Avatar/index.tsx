@@ -1,11 +1,24 @@
+import Block from '@components/Block';
+import CustomImage from '@components/CustomImage';
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Source} from 'react-native-fast-image';
+import {styles} from './Avatar.styles';
 
-const Avatar = () => {
+type Props = {
+  uri: Source;
+  width?: number;
+  height?: number;
+};
+
+const Avatar = (props: Props) => {
+  const {uri, width, height} = props;
   return (
-    <View>
-      <Text>Avatar</Text>
-    </View>
+    <Block
+      middle
+      center
+      style={[styles.container, {width: width || 110, height: height || 110}]}>
+      <CustomImage source={uri} style={styles.image} />
+    </Block>
   );
 };
 

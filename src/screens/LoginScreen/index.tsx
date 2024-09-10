@@ -8,14 +8,15 @@ import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import {ImageBackground} from 'react-native';
 import {styles} from './LoginScreen.styles';
-import {goBack} from '@navigation/NavigationService';
+import {goBack, navigate} from '@navigation/NavigationService';
 import {emailRules} from '@utils/validationRules';
 import useGeneralStore from '@store/generalStore';
 import KeyboardSpacer from '@components/KeyboardSpacer';
 
 const LoginScreen = () => {
-  const {showLoading} = useGeneralStore();
+  // const {showLoading, hideLoading} = useGeneralStore();
   const {
+    getValues,
     control,
     handleSubmit,
     formState: {errors, isSubmitted},
@@ -24,7 +25,12 @@ const LoginScreen = () => {
   });
 
   const onSubmit = () => {
-    showLoading();
+    // showLoading();
+
+    setTimeout(() => {
+      // hideLoading();
+      navigate('PasswordTypingScreen', {email: getValues('email')});
+    }, 500);
   };
 
   return (
