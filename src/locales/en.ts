@@ -16,4 +16,6 @@ export default {
   SHOP: 'Shop',
   CATEGORIES: 'Categories',
   SEE_ALL: 'See all',
+  NOT_YOU: 'Not you?',
+  TYPE_YOU_PASSWORD: 'Type your password',
 };
