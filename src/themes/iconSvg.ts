@@ -156,7 +156,7 @@ export const icon_camera = `<svg width="22" height="18" viewBox="0 0 22 18" fill
 </svg>
 `;
 
-// export const icon_arrow_right = `<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-// <path d="M8.67173 0.294922L7.49207 1.49866L11.2477 5.14597H0.0891113V6.83119H11.2477L7.49207 10.4785L8.67173 11.6822L14.5459 5.98858L8.67173 0.294922Z" fill="white"/>
-// </svg>
-// `;
+export const icon_check = `<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.02408 1.60938L4.24185 6.3916L2.06812 4.21786" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;

@@ -1,4 +1,5 @@
 import {scale, verticalScale} from '@helpers/uiHelper';
+import {colors} from '@themes/colors';
 import React from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 import {styles} from './Block.styles';
@@ -272,7 +273,12 @@ const Block: React.FC<BlockProps> = props => {
     radius && {borderRadius: radius},
     width && {width},
     height && {height},
-    background && {backgroundColor: background},
+    background && {
+      backgroundColor:
+        background in colors
+          ? colors[background as keyof typeof colors]
+          : background,
+    },
     style,
   ];
 

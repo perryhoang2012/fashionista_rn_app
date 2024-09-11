@@ -18,4 +18,9 @@ export default {
   SEE_ALL: 'Xem tất cả',
   NOT_YOU: 'Không phải là bạn?',
   TYPE_YOU_PASSWORD: 'Nhập mật khẩu của bạn',
+  FORGOT_YOUR_PASSWORD: 'Quên mật khẩu',
+  PASSWORD_RECOVERY: 'Khôi phục mật khẩu',
+  SUBTITLE_PASSWORD_RECOVERY:
+    'Bạn muốn khôi phục mật khẩu của mình bằng cách nào?',
+  SMS: 'SMS',
 };

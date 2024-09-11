@@ -1,7 +1,8 @@
+import {scale, verticalScale} from '@helpers/uiHelper';
+import {colors} from '@themes/colors';
 import React from 'react';
 import {Keyboard, StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
 import {styles} from './Button.styles';
-import {scale, verticalScale} from '@helpers/uiHelper';
 
 export type ButtonProps = {
   /**
@@ -304,7 +305,12 @@ const Button: React.FC<ButtonProps> = props => {
     height && {
       height: typeof height === 'number' ? scale(height) : height,
     },
-    background && {backgroundColor: background},
+    background && {
+      backgroundColor:
+        background in colors
+          ? colors[background as keyof typeof colors]
+          : background,
+    },
     style,
   ];
 

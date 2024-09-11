@@ -6,4 +6,5 @@ export type RootStackParamList = {
   LoginScreen: undefined;
   CreateAccountScreen: undefined;
   PasswordTypingScreen: {email: string};
+  PasswordRecoveryScreen: {email: string};
 };

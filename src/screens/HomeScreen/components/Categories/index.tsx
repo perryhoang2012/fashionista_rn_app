@@ -45,7 +45,7 @@ const Categories = () => {
             {t('SEE_ALL')}
           </Text>
           <Button
-            background={colors.PRIMARY}
+            background={'PRIMARY'}
             width={30}
             height={30}
             radius={50}

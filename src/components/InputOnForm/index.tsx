@@ -1,6 +1,5 @@
 import CustomSvg from '@components/CustomSvg';
 import Text from '@components/Text';
-import {colors} from '@themes/colors';
 import {icon_eye_slash} from '@themes/iconSvg';
 import React, {useState} from 'react';
 import {
@@ -66,7 +65,7 @@ const InputOnForm = (props: Props) => {
       </Block>
       <Block height={20} mt={4}>
         {error && isSubmitted && (
-          <Text size={14} color={colors.RED}>
+          <Text size={14} color={'RED'}>
             {error}
           </Text>
         )}

@@ -10,7 +10,7 @@ export const toastConfig = {
   success: (props: BaseToastProps) => (
     <Button opacity={0.9} onPress={() => Toast.hide()} style={styles.widthFull}>
       <Block middle center style={[styles.container, styles.backgroundSuccess]}>
-        <Text medium center color="white" size={14}>
+        <Text medium center color="WHITE" size={14}>
           {props.text1}
         </Text>
       </Block>
@@ -20,7 +20,7 @@ export const toastConfig = {
   error: (props: BaseToastProps) => (
     <Button opacity={0.9} onPress={() => Toast.hide()} style={styles.widthFull}>
       <Block middle center style={[styles.container, styles.backgroundError]}>
-        <Text medium center color="white" size={14}>
+        <Text medium center color="WHITE" size={14}>
           {props.text1}
         </Text>
       </Block>
@@ -29,7 +29,7 @@ export const toastConfig = {
   info: (props: BaseToastProps) => (
     <Button opacity={0.9} onPress={() => Toast.hide()} style={styles.widthFull}>
       <Block middle center style={[styles.container, styles.backgroundInfo]}>
-        <Text medium center color="white" size={14}>
+        <Text medium center color="WHITE" size={14}>
           {props.text1}
         </Text>
       </Block>

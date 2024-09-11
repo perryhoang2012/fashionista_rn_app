@@ -1,7 +1,6 @@
 import Block from '@components/Block';
 import CustomSvg from '@components/CustomSvg';
 import Text from '@components/Text';
-import {colors} from '@themes/colors';
 import {icon_clock} from '@themes/iconSvg';
 import dayjs from 'dayjs';
 import React, {useEffect, useState} from 'react';
@@ -62,7 +61,7 @@ const CountDownTimer = (props: Props) => {
           middle
           center
           radius={7}
-          background={color || colors.WHITE_SECONDARY}>
+          background={color || 'WHITE_SECONDARY'}>
           <Text size={16} semiBold>
             {formatTime('hours')}
           </Text>
@@ -74,7 +73,7 @@ const CountDownTimer = (props: Props) => {
           middle
           center
           radius={7}
-          background={color || colors.WHITE_SECONDARY}>
+          background={color || 'WHITE_SECONDARY'}>
           <Text size={16} semiBold>
             {formatTime('minutes')}
           </Text>
@@ -85,7 +84,7 @@ const CountDownTimer = (props: Props) => {
           middle
           center
           radius={7}
-          background={color || colors.WHITE_SECONDARY}>
+          background={color || 'WHITE_SECONDARY'}>
           <Text size={16} semiBold>
             {formatTime('seconds')}
           </Text>

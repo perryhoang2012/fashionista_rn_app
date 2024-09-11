@@ -18,4 +18,9 @@ export default {
   SEE_ALL: 'See all',
   NOT_YOU: 'Not you?',
   TYPE_YOU_PASSWORD: 'Type your password',
+  FORGOT_YOUR_PASSWORD: 'Forgot your password?',
+  PASSWORD_RECOVERY: 'Password Recovery',
+  SUBTITLE_PASSWORD_RECOVERY: 'How you would like to restore your password?',
+  SMS: 'SMS',
+  ENTER_4_DIGITS_CODE: 'Enter 4-digits code we sent you on your phone number',
 };

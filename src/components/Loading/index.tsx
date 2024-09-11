@@ -1,8 +1,7 @@
+import useGeneralStore from '@store/generalStore';
 import React, {useEffect} from 'react';
 import {ActivityIndicator, Modal, View} from 'react-native';
 import {styles} from './Loading.style';
-import useGeneralStore from '@store/generalStore';
-import {colors} from '@themes/colors';
 
 const Loading = () => {
   const {isLoading, hideLoading} = useGeneralStore();
@@ -23,7 +22,7 @@ const Loading = () => {
       onRequestClose={() => {}}>
       <View style={styles.modalBackground}>
         <View style={styles.activityIndicatorWrapper}>
-          <ActivityIndicator size="large" color={colors.PRIMARY} />
+          <ActivityIndicator size="large" color={'PRIMARY'} />
         </View>
       </View>
     </Modal>

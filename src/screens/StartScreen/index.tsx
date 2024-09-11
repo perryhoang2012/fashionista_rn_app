@@ -1,14 +1,13 @@
 import Block from '@components/Block';
+import Button from '@components/Button';
 import CustomImage from '@components/CustomImage';
+import CustomSvg from '@components/CustomSvg';
 import Text from '@components/Text';
-import {colors} from '@themes/colors';
+import {t} from '@locales';
+import {navigate} from '@navigation/NavigationService';
+import {icon_arrow_right} from '@themes/iconSvg';
 import React from 'react';
 import {styles} from './StartScreen.styles';
-import Button from '@components/Button';
-import CustomSvg from '@components/CustomSvg';
-import {navigate} from '@navigation/NavigationService';
-import {t} from '@locales';
-import {icon_arrow_right} from '@themes/iconSvg';
 
 const StartScreen = () => {
   const goToLogin = () => {
@@ -19,7 +18,7 @@ const StartScreen = () => {
     navigate('CreateAccountScreen');
   };
   return (
-    <Block flex center background={colors.WHITE}>
+    <Block flex center background={'WHITE'}>
       <Block flex />
       <Block flex={2} middle center>
         <CustomImage
@@ -33,11 +32,11 @@ const StartScreen = () => {
           radius={16}
           middle
           center
-          background={colors.PRIMARY}
+          background={'PRIMARY'}
           height={50}
           width={'100%'}
           onPress={goToCreateAccount}>
-          <Text size={22} color={colors.WHITE}>
+          <Text size={22} color={'WHITE'}>
             {t('GET_STARTED')}
           </Text>
         </Button>
@@ -48,7 +47,7 @@ const StartScreen = () => {
           <Block
             middle
             center
-            background={colors.PRIMARY}
+            background={'PRIMARY'}
             width={30}
             height={30}
             radius={50}>

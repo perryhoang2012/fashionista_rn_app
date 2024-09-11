@@ -1,17 +1,15 @@
 import Block from '@components/Block';
 import Button from '@components/Button';
 import InputOnForm from '@components/InputOnForm';
+import KeyboardSpacer from '@components/KeyboardSpacer';
 import Text from '@components/Text';
 import {t} from '@locales';
-import {colors} from '@themes/colors';
+import {goBack, navigate} from '@navigation/NavigationService';
+import {emailRules} from '@utils/validationRules';
 import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import {ImageBackground} from 'react-native';
 import {styles} from './LoginScreen.styles';
-import {goBack, navigate} from '@navigation/NavigationService';
-import {emailRules} from '@utils/validationRules';
-import useGeneralStore from '@store/generalStore';
-import KeyboardSpacer from '@components/KeyboardSpacer';
 
 const LoginScreen = () => {
   // const {showLoading, hideLoading} = useGeneralStore();
@@ -73,15 +71,15 @@ const LoginScreen = () => {
               middle
               center
               height={50}
-              background={colors.PRIMARY}
+              background={'PRIMARY'}
               radius={16}
               onPress={handleSubmit(onSubmit)}>
-              <Text light size={22} color={colors.WHITE}>
+              <Text light size={22} color={'WHITE'}>
                 {t('NEXT')}
               </Text>
             </Button>
             <Button middle center mt={14} onPress={() => goBack()}>
-              <Text light size={15} color={colors.BLACK}>
+              <Text light size={15} color={'BLACK'}>
                 {t('CANCEL')}
               </Text>
             </Button>

@@ -9,10 +9,11 @@ type Props = {
   state: string;
   setState: (value: string) => void;
   onSubmit: () => void;
+  isWrongPassword: boolean;
 };
 
 const InputPassword = (props: Props) => {
-  const {state, setState, onSubmit} = props;
+  const {state, setState, onSubmit, isWrongPassword} = props;
   const inputRef = useRef<TextInput>(null);
 
   const renderDots = () => {
@@ -27,7 +28,11 @@ const InputPassword = (props: Props) => {
             styles.dot,
             {
               backgroundColor:
-                i < state.length ? colors.PRIMARY : colors.PRIMARY_SECONDARY,
+                i < state.length
+                  ? isWrongPassword
+                    ? colors.RED
+                    : colors.PRIMARY
+                  : colors.PRIMARY_SECONDARY,
             },
           ]}
         />,
@@ -65,6 +70,7 @@ const InputPassword = (props: Props) => {
         secureTextEntry
         style={styles.hiddenInput}
         onSubmitEditing={onSubmit}
+        blurOnSubmit={false}
         autoFocus
       />
     </Block>

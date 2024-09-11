@@ -5,8 +5,9 @@ export const colors = {
   PINK: '#FF5790',
   WHITE: '#FFFFFF',
   WHITE_SECONDARY: '#F3F3F3',
-  RED: '#F5004F',
+  RED: '#EC4E4E',
   BACKGROUND_ERROR: '#ff3547',
   BACKGROUND_INFO: '#ffa000',
   BACKGROUND_INPUT: '#F8F8F8',
+  PINK_SECONDARY: '#FFEBEB',
 };

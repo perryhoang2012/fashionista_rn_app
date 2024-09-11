@@ -1,25 +1,38 @@
+import Avatar from '@components/Avatar';
 import Block from '@components/Block';
+import Button from '@components/Button';
+import CustomSvg from '@components/CustomSvg';
+import Text from '@components/Text';
+import {t} from '@locales';
+import {RootStackParamList} from '@models/navigation';
+import {goBack, navigate, replace} from '@navigation/NavigationService';
+import {RouteProp, useRoute} from '@react-navigation/native';
+import {icon_arrow_right} from '@themes/iconSvg';
 import React, {useState} from 'react';
 import {ImageBackground} from 'react-native';
-import {styles} from './PasswordTypingScreen.styles';
-import Text from '@components/Text';
-import Avatar from '@components/Avatar';
-import {t} from '@locales';
-import Button from '@components/Button';
-import {colors} from '@themes/colors';
-import CustomSvg from '@components/CustomSvg';
-import {icon_arrow_right} from '@themes/iconSvg';
 import InputPassword from './components/InputPassword';
-import {goBack, replace} from '@navigation/NavigationService';
+import {styles} from './PasswordTypingScreen.styles';
 
 const PasswordTypingScreen = () => {
-  //   const route = useRoute();
-  //   const {email} = route?.params;
+  const route =
+    useRoute<RouteProp<RootStackParamList, 'PasswordTypingScreen'>>();
+  const {email} = route?.params;
 
   const [password, setPassword] = useState<string>('');
+  const [countWrongPassword, setCountWrongPassword] = useState<number>(0);
+  const [isWrongPassword, setIsWrongPassword] = useState<boolean>(false);
 
   const onSubmit = () => {
-    replace('BottomTab');
+    if (password === '123456') {
+      setIsWrongPassword(false);
+      setCountWrongPassword(0);
+      setTimeout(() => {
+        replace('BottomTab');
+      }, 200);
+    } else {
+      setIsWrongPassword(true);
+      setCountWrongPassword(countWrongPassword + 1);
+    }
   };
 
   return (
@@ -41,7 +54,20 @@ const PasswordTypingScreen = () => {
               state={password}
               setState={setPassword}
               onSubmit={onSubmit}
+              isWrongPassword={isWrongPassword}
             />
+            <Block mt={20} height={30}>
+              {countWrongPassword >= 3 && (
+                <Button
+                  onPress={() =>
+                    navigate('PasswordRecoveryScreen', {email: email})
+                  }>
+                  <Text size={16} light>
+                    {t('FORGOT_YOUR_PASSWORD')}
+                  </Text>
+                </Button>
+              )}
+            </Block>
           </Block>
         </Block>
         <Block flex row middle center>
@@ -49,7 +75,7 @@ const PasswordTypingScreen = () => {
             {t('NOT_YOU')}
           </Text>
           <Button
-            background={colors.PRIMARY}
+            background={'PRIMARY'}
             width={30}
             height={30}
             radius={50}

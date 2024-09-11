@@ -1,10 +1,9 @@
 import Block from '@components/Block';
-import {colors} from '@themes/colors';
 import React from 'react';
 import {ScrollView, Text} from 'react-native';
-import Header from './components/Header';
 import Banner from './components/Banner';
 import Categories from './components/Categories';
+import Header from './components/Header';
 import {styles} from './HomeScreen.styles';
 
 const HomeScreen = () => {
@@ -20,7 +19,7 @@ const HomeScreen = () => {
   // });
 
   return (
-    <Block flex background={colors.WHITE}>
+    <Block flex background={'WHITE'}>
       <Header />
       <ScrollView style={styles.containerScrollView}>
         <Banner />

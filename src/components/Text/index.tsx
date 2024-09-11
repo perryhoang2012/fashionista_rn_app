@@ -84,7 +84,10 @@ const Text: React.FC<Props> = props => {
   } = props;
 
   const textStyles: any = [
-    {color: color || colors.BLACK},
+    {color: colors.BLACK},
+    color && {
+      color: color in colors ? colors[color as keyof typeof colors] : color,
+    },
     flex && {flex: 1},
     !size && {lineHeight: 20},
     title && styles.title,
